@@ -33,6 +33,7 @@ const store = (function() {
 
   function findAndToggleChecked(id){
     let foundId = this.findById(id);
+    console.log(foundId);
     foundId.checked = !foundId.checked;
   }
 
