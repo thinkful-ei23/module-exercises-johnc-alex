@@ -49,8 +49,7 @@ const store = (function() {
 
   function findAndDelete(id){
     let foundId = this.findById(id);
-    console.log(foundId.id);
-    store.items.filter(element => element != foundId.id);
+    return store.items = store.items.filter(element => element != foundId);
   }
 
   return{
