@@ -15,8 +15,10 @@ const store = (function() {
 
   let searchTerm = '';
 
+
   function findById(id){
-    return items.id.find(id)
+
+    return store.items.find(element => element.id === id);
   }
 
   function addItem(name){
@@ -47,7 +49,8 @@ const store = (function() {
 
   function findAndDelete(id){
     let foundId = this.findById(id);
-    store.items.filter(!foundId);
+    console.log(foundId.id);
+    store.items.filter(element => element != foundId.id);
   }
 
   return{
