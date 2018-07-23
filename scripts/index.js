@@ -1,5 +1,6 @@
-console.log(store);
-console.log(foo);
+'use strict';
+/* global $ */
+
 
 /* global shoppingList, cuid */
 
