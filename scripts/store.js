@@ -39,9 +39,9 @@ const store = (function() {
 
   function findAndUpdateName(id, newName){
     try{
-      Item.validateName(name);
+      Item.validateName(newName);
       let foundId = this.findById(id);
-      foundId.name = name;
+      foundId.name = newName;
     }
     catch(error){
       console.log('Cannot update name: ' + error.message)
@@ -53,6 +53,16 @@ const store = (function() {
     return store.items = store.items.filter(element => element != foundId);
   }
 
+
+  function toggleCheckedFilter() {
+    this.hideCheckedItems = !this.hideCheckedItems;
+  }
+
+  function setSearchTerm(passedSearchTerm) {
+    this.searchTerm = passedSearchTerm;
+  }
+
+
   return{
     items,
     hideCheckedItems,
@@ -62,5 +72,7 @@ const store = (function() {
     findAndToggleChecked,
     addItem,
     findById,
+    toggleCheckedFilter,
+    setSearchTerm,
   };
 }());
